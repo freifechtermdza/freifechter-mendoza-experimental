@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto · Freifechter Mendoza</title>
+<meta name="description" content="Contactate con Freifechter Mendoza para sumarte a una clase de prueba de espada larga.">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="Escudo Freifechter Mendoza">
+      <span class="brand-word">Freifechter<br>Mendoza</span>
+    </a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="main-nav">
+      <a href="index.html" class="">Inicio</a>
+      <a href="nosotros.html" class="">Nosotros</a>
+      <a href="disciplinas.html" class="">Disciplinas</a>
+      <a href="horarios.html" class="">Clases y horarios</a>
+      <a href="galeria.html" class="">Galería</a>
+      <a href="eventos.html" class="">Eventos</a>
+      <a href="contacto.html" class="active">Sumate</a>
+    </nav>
+  </div>
+</header>
+
+<main id="page" class="page-sheet">
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Sumate</span>
+    <h1>Contacto e inscripción</h1>
+    <p>Contanos un poco sobre vos y te respondemos para coordinar tu primera clase.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container split">
+    <div class="reveal">
+      <form class="club-form" action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+        <div class="field">
+          <label for="nombre">Nombre y apellido</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono">
+          </div>
+        </div>
+        <div class="field">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos si ya entrenaste antes, y qué día te queda mejor (martes, jueves o viernes)."></textarea>
+        </div>
+        <button type="submit" class="btn solid" style="width:fit-content;">Enviar</button>
+        <p class="form-note">Este formulario usa <a href="https://formspree.io" target="_blank" rel="noopener" style="color:var(--gold-light);">Formspree</a> para recibir los mensajes por email sin necesidad de un servidor propio — ideal para un sitio alojado en GitHub Pages. Reemplazá <code>TU_ID_DE_FORMSPREE</code> por el ID que te da Formspree al crear el formulario (gratis).</p>
+      </form>
+    </div>
+
+    <div class="reveal">
+      <span class="eyebrow">Otras formas de contacto</span>
+      <h2 style="margin-bottom:1.2rem;">Encontranos</h2>
+      <table class="schedule">
+        <tr><td>Email</td><td><a href="mailto:hema.meyer.mza@gmail.com" style="color:var(--gold-light);">hema.meyer.mza@gmail.com</a></td></tr>
+        <tr><td>Instagram</td><td><a href="https://www.instagram.com/freifechtermendoza/" target="_blank" rel="noopener" style="color:var(--gold-light);">@freifechtermendoza</a></td></tr>
+        <tr><td>Sede</td><td><a href="https://maps.app.goo.gl/nJZAB4cJ3z2qL3cm6" target="_blank" rel="noopener" style="color:var(--gold-light);">Ver en Google Maps</a></td></tr>
+      </table>
+      <div class="map-frame" style="margin-top:1.5rem;">
+        <iframe src="https://www.google.com/maps?q=-32.9106794,-68.8632661&hl=es&z=15&output=embed" loading="lazy" title="Ubicación Freifechter Mendoza"></iframe>
+      </div>
+      <p class="form-note" style="margin-top:1rem;">Cuando tengas un número de WhatsApp para el club, avisame y agrego el botón directo acá y en el pie de página.</p>
+    </div>
+  </div>
+</section>
+<div class="folio">Folio VII — Contacto</div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo.png" alt="Escudo Freifechter Mendoza" style="width:56px;height:56px;">
+        <p>Escuela de esgrima histórica europea (HEMA) en Mendoza, Argentina. Formación basada en el corpus de Joachim Meyer (1570), comenzando por la espada larga.</p>
+      </div>
+      <div>
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="disciplinas.html">Disciplinas</a></li>
+          <li><a href="horarios.html">Clases y horarios</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="eventos.html">Eventos y torneos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:hema.meyer.mza@gmail.com">hema.meyer.mza@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/freifechtermendoza/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="contacto.html">Formulario de contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Freifechter Mendoza. Peritia in gladio, gloria in vita.</span>
+      <span>Mendoza, Argentina</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/page-transitions.js"></script>
+</body>
+</html>

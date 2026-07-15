@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eventos · Freifechter Mendoza</title>
+<meta name="description" content="Agenda de seminarios, jornadas abiertas y torneos de Freifechter Mendoza.">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="Escudo Freifechter Mendoza">
+      <span class="brand-word">Freifechter<br>Mendoza</span>
+    </a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="main-nav">
+      <a href="index.html" class="">Inicio</a>
+      <a href="nosotros.html" class="">Nosotros</a>
+      <a href="disciplinas.html" class="">Disciplinas</a>
+      <a href="horarios.html" class="">Clases y horarios</a>
+      <a href="galeria.html" class="">Galería</a>
+      <a href="eventos.html" class="active">Eventos</a>
+      <a href="contacto.html" class="">Sumate</a>
+    </nav>
+  </div>
+</header>
+
+<main id="page" class="page-sheet">
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Agenda</span>
+    <h1>Eventos y torneos</h1>
+    <p>Seminarios, jornadas abiertas y torneos. Actualizá esta lista a medida que se confirmen fechas.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="event-card reveal">
+      <div class="event-date"><div class="day">—</div><div class="month">Próx.</div></div>
+      <div>
+        <span class="event-tag">Seminario</span>
+        <h3 style="margin-bottom:.3rem;">Jornada abierta de espada larga</h3>
+        <p style="color:var(--text-soft);">Clase abierta para principiantes y curiosos, sin experiencia previa requerida. Se provee equipo de práctica.</p>
+      </div>
+    </div>
+    <p class="form-note" style="margin-top:2rem;">Todavía no hay fechas confirmadas — reemplazá este bloque por tus próximos eventos reales copiando la estructura de <code>.event-card</code>.</p>
+  </div>
+</section>
+
+<section class="section-alt" style="text-align:center;">
+  <div class="container">
+    <h2>¿Vas a venir?</h2>
+    <p style="color:var(--text-soft);max-width:480px;margin:0 auto 2rem;">Escribinos para confirmar tu lugar en cualquiera de estos encuentros.</p>
+    <a href="contacto.html" class="btn solid">Confirmar asistencia</a>
+  </div>
+</section>
+<div class="folio">Folio VI — Eventos</div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo.png" alt="Escudo Freifechter Mendoza" style="width:56px;height:56px;">
+        <p>Escuela de esgrima histórica europea (HEMA) en Mendoza, Argentina. Formación basada en el corpus de Joachim Meyer (1570), comenzando por la espada larga.</p>
+      </div>
+      <div>
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="disciplinas.html">Disciplinas</a></li>
+          <li><a href="horarios.html">Clases y horarios</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="eventos.html">Eventos y torneos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:hema.meyer.mza@gmail.com">hema.meyer.mza@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/freifechtermendoza/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="contacto.html">Formulario de contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Freifechter Mendoza. Peritia in gladio, gloria in vita.</span>
+      <span>Mendoza, Argentina</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/page-transitions.js"></script>
+</body>
+</html>
