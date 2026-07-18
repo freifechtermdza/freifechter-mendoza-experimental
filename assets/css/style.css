@@ -99,7 +99,7 @@ section{ padding: clamp(3.5rem, 8vw, 7rem) 0; position:relative; }
 }
 .site-header .container{ display:flex; align-items:center; justify-content:space-between; gap:1.5rem; }
 .brand{ display:flex; align-items:center; gap:.7rem; text-decoration:none; }
-.brand svg, .brand img{ width:60px; height:60px; object-fit:contain; color: var(--gold-light); flex-shrink:0; }
+.brand svg, .brand img{ width:68px; height:68px; object-fit:contain; color: var(--gold-light); flex-shrink:0; }
 .brand-word{ font-family: var(--display); font-size:.86rem; line-height:1.35; letter-spacing:.1em; color: var(--parchment); }
 
 .nav-toggle{
