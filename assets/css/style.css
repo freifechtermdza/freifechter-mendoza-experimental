@@ -14,11 +14,6 @@
   --line:       rgba(184,134,47,.28);
   --text-soft:  rgba(236,226,207,.72);
 
-  /* Fijas: para texto sobre superficies de acento (botones, badges) que no
-     deben invertirse aunque el tema de la página (.page-sheet) cambie */
-  --ink-fixed:   #0e0d0b;
-  --cream-fixed: #f4ead2;
-
   --display: 'Cinzel', serif;
   --body: 'EB Garamond', serif;
 
@@ -85,8 +80,8 @@ section{ padding: clamp(3.5rem, 8vw, 7rem) 0; position:relative; }
   background: transparent;
   transition: background .25s ease, color .25s ease, transform .2s ease;
 }
-.btn:hover{ background: var(--gold); color: var(--ink-fixed); transform: translateY(-1px); }
-.btn.solid{ background: var(--wax); border-color: var(--wax); color: var(--cream-fixed); }
+.btn:hover{ background: var(--gold); color: var(--ink); transform: translateY(-1px); }
+.btn.solid{ background: var(--wax); border-color: var(--wax); color: var(--parchment); }
 .btn.solid:hover{ background: var(--wax-light); border-color: var(--wax-light); }
 
 /* ===== Header / Nav ===== */
@@ -94,9 +89,7 @@ section{ padding: clamp(3.5rem, 8vw, 7rem) 0; position:relative; }
   position: fixed; top:0; left:0; right:0; z-index: 100;
   padding: 1.1rem 0;
   transition: background .35s ease, padding .35s ease, border-color .35s ease;
-  border-bottom: 1px solid var(--line);
-  background: rgba(14,13,11,.92);
-  backdrop-filter: blur(6px);
+  border-bottom: 1px solid transparent;
 }
 .site-header.solid{
   background: rgba(14,13,11,.92);
@@ -174,6 +167,24 @@ nav.main-nav a:hover, nav.main-nav a.active{ color: var(--gold-light); border-co
 .card p{ color: var(--text-soft); margin-bottom:0; font-size: .98rem; }
 
 .card.dark{ background: var(--ink-3); }
+
+/* ===== Artículo de blog (lectura larga) ===== */
+.article-hero{ padding: 8rem 0 2rem; }
+.article-hero .back-link{
+  display:inline-flex; align-items:center; gap:.4em; font-family: var(--display);
+  font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color: var(--gold-light);
+  text-decoration:none; margin-bottom:1.6rem;
+}
+.article-hero h1{ max-width: 20ch; }
+.article-body{ max-width: 68ch; margin: 0 auto; }
+.article-body p{ color: var(--text-soft); font-size:1.08rem; line-height:1.8; margin-bottom:1.4em; }
+.article-body h2{ font-size:1.5rem; margin-top:2.2em; margin-bottom:.6em; }
+.article-body blockquote{
+  margin: 2em 0; padding: .2em 0 .2em 1.4em; border-left: 3px solid var(--gold);
+  font-style: italic; color: var(--parchment); font-size:1.15rem;
+}
+.article-meta{ display:flex; gap:1.2rem; align-items:center; color: var(--text-soft); font-size:.85rem; margin-bottom:2.5rem; }
+
 
 /* ===== Sección oscura alterna / parchment ===== */
 .section-alt{ background: var(--ink-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
@@ -331,7 +342,7 @@ footer a:hover{ color: var(--gold-light); }
   display:inline-block; font-family: var(--display); font-size:.66rem; letter-spacing:.12em;
   text-transform:uppercase; padding:.3em .8em; margin-bottom: .8rem;
 }
-.status.activa{ color: var(--ink-fixed); background: var(--gold-light); }
+.status.activa{ color: var(--ink); background: var(--gold-light); }
 .status.formacion{ color: var(--gold-light); background:transparent; border:1px solid var(--gold); }
 
 /* ===== Mapa ===== */
@@ -346,66 +357,7 @@ footer a:hover{ color: var(--gold-light); }
 }
 
 
-/* ===== Experimento: tratado antiguo — páginas con vuelta de hoja ===== */
-body{ perspective: 1800px; }
-
-.page-sheet{
-  /* Tema de página: papel envejecido (invierte la paleta solo dentro de la hoja;
-     header y footer quedan con el tema oscuro original, como la tapa del libro) */
-  --ink:        #e9ddc0;
-  --ink-2:      #dfd0a8;
-  --ink-3:      #d3c091;
-  --parchment:  #2b2015;
-  --gold-light: #8a5c17;
-  --text-soft:  rgba(43,32,21,.72);
-  --line:       rgba(120,80,30,.3);
-
-  background-color: var(--ink);
-  background-image:
-    radial-gradient(ellipse 340px 260px at 8% 12%, rgba(120,90,40,.16), transparent 60%),
-    radial-gradient(ellipse 260px 300px at 92% 30%, rgba(120,90,40,.14), transparent 60%),
-    radial-gradient(ellipse 300px 240px at 20% 78%, rgba(90,60,20,.12), transparent 60%),
-    radial-gradient(ellipse 380px 300px at 85% 88%, rgba(120,90,40,.13), transparent 60%),
-    radial-gradient(ellipse 900px 500px at 50% 0%, rgba(255,250,235,.35), transparent 60%),
-    url("../img/paper-noise.png");
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat;
-  background-size: auto, auto, auto, auto, auto, 256px 256px;
-  color: var(--parchment);
-  position: relative;
-  transform-origin: left center;
-  transform-style: preserve-3d;
-  will-change: transform, opacity;
-  transition: transform .5s cubic-bezier(.6,0,.4,1), opacity .42s ease;
-  box-shadow: inset 26px 0 36px -30px rgba(60,42,20,.35), inset -10px 0 24px -20px rgba(60,42,20,.25);
-}
-
-.page-sheet.leaving{
-  transform: rotateY(-12deg) translateX(-2%) scale(.98);
-  opacity: 0;
-  box-shadow: -40px 0 80px -20px rgba(0,0,0,.6);
-}
-.page-sheet.entering{
-  transform: rotateY(10deg) translateX(2%) scale(.98);
-  opacity: 0;
-}
-.page-sheet.settled{
-  transform: none;
-  opacity: 1;
-}
-
-.folio{
-  max-width: var(--maxw); margin: 0 auto; padding: 2.5rem 6vw 3.5rem;
-  text-align:center; font-family: var(--display); font-style:italic; font-size:.78rem;
-  letter-spacing:.18em; text-transform:uppercase; color: var(--gold-light); opacity:.75;
-  border-top: 1px solid var(--line);
-}
-
-@media (prefers-reduced-motion: reduce){
-  .page-sheet, .page-sheet.leaving, .page-sheet.entering, .page-sheet.settled{
-    transition:none; transform:none; opacity:1;
-  }
-}
-
+/* ===== Responsive ===== */
 @media (max-width: 900px){
   .grid.cols-3{ grid-template-columns: 1fr 1fr; }
   .footer-grid{ grid-template-columns: 1fr 1fr; }
