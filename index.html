@@ -72,9 +72,9 @@
   <a href="https://wa.me/5492613629978?text=Hola%21%20Quiero%20probar%20una%20clase%20en%20Freifechter%20Mendoza." target="_blank" rel="noopener" class="btn solid">Quiero probar una clase</a>
 </div>
 
+<main id="page" class="page-sheet">
 <section class="hero-carousel">
-  <div class="slide active" style="background-image:url('assets/img/hero/carousel-1.jpg')"></div>
-  <div class="slide" style="background-image:url('assets/img/hero/carousel-2.jpg')"></div>
+  <div class="slide active" style="background-image:url('assets/img/hero/carousel-2.jpg')"></div>
   <div class="slide" style="background-image:url('assets/img/hero/carousel-3.jpg')"></div>
   <div class="slide" style="background-image:url('assets/img/hero/carousel-4.jpg')"></div>
   <div class="slide" style="background-image:url('assets/img/hero/carousel-5.jpg')"></div>
@@ -90,7 +90,6 @@
     <button aria-label="Lámina 3"></button>
     <button aria-label="Lámina 4"></button>
     <button aria-label="Lámina 5"></button>
-    <button aria-label="Lámina 6"></button>
   </div>
 </section>
 
@@ -117,15 +116,17 @@
 
 <section class="section-alt" style="text-align:center;">
   <div class="container">
-    <span class="eyebrow">Antes de que preguntes</span>
-    <h2 style="margin-bottom:2rem;">No hace falta...</h2>
+    <span class="eyebrow">Antes de tu primera clase</span>
+    <h2 style="margin-bottom:1rem;">Todo gran espadachín tuvo una primera clase.</h2>
+    <p style="color:var(--text-soft);max-width:560px;margin:0 auto 2.4rem;">Es normal sentir un poco de miedo antes de cruzar la puerta la primera vez. La buena noticia es que ahí nadie espera que ya sepas nada — todos empezamos exactamente en el mismo lugar que vos. Lo único que hace falta es animarte a dar el primer paso.</p>
     <div class="myth-chips reveal">
-      <span class="myth-chip"><span class="x">✕</span> Experiencia previa</span>
-      <span class="myth-chip"><span class="x">✕</span> Tener fuerza</span>
-      <span class="myth-chip"><span class="x">✕</span> Comprar equipo</span>
-      <span class="myth-chip"><span class="x">✕</span> Estar en forma</span>
-      <span class="myth-chip"><span class="x">✕</span> Haber hecho esgrima antes</span>
+      <span class="value-chip">✓ Curiosidad por aprender</span>
+      <span class="value-chip">✓ Constancia para entrenar</span>
+      <span class="value-chip">✓ Respeto por los compañeros</span>
+      <span class="value-chip">✓ Ganas de superarte</span>
+      <span class="value-chip">✓ Paciencia para construir habilidad</span>
     </div>
+    <p style="margin-top:2.4rem;"><a href="https://wa.me/5492613629978?text=Hola%21%20Quiero%20probar%20una%20clase%20en%20Freifechter%20Mendoza." target="_blank" rel="noopener" class="btn solid">Vení a probar, el resto lo aprendés acá</a></p>
   </div>
 </section>
 
@@ -146,6 +147,8 @@
     </ul>
   </div>
 </section>
+<div class="folio">Folio I — Inicio</div>
+</main>
 
 <footer>
   <div class="container">
@@ -174,6 +177,12 @@
         </ul>
       </div>
     </div>
+    <div class="footer-partners">
+      <span>Orgullosos miembros de la</span>
+      <a href="https://www.cadh-hema.com.ar" target="_blank" rel="noopener">
+        <img src="assets/img/logo-cadh.svg" alt="Comunidad Argentina de HEMA">
+      </a>
+    </div>
     <div class="footer-bottom">
       <span>© <span id="year"></span> Freifechter Mendoza. Peritia in gladio, gloria in vita.</span>
       <span>Mendoza, Argentina</span>
@@ -184,5 +193,6 @@
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/hero-carousel.js"></script>
+<script src="assets/js/page-transitions.js"></script>
 </body>
 </html>

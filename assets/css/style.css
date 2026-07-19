@@ -14,6 +14,11 @@
   --line:       rgba(184,134,47,.28);
   --text-soft:  rgba(236,226,207,.72);
 
+  /* Fijas: para texto sobre superficies de acento (botones, badges) que no
+     deben invertirse aunque el tema de la página (.page-sheet) cambie */
+  --ink-fixed:   #0e0d0b;
+  --cream-fixed: #f4ead2;
+
   --display: 'Cinzel', serif;
   --body: 'EB Garamond', serif;
 
@@ -80,8 +85,8 @@ section{ padding: clamp(3.5rem, 8vw, 7rem) 0; position:relative; }
   background: transparent;
   transition: background .25s ease, color .25s ease, transform .2s ease;
 }
-.btn:hover{ background: var(--gold); color: var(--ink); transform: translateY(-1px); }
-.btn.solid{ background: var(--wax); border-color: var(--wax); color: var(--parchment); }
+.btn:hover{ background: var(--gold); color: var(--ink-fixed); transform: translateY(-1px); }
+.btn.solid{ background: var(--wax); border-color: var(--wax); color: var(--cream-fixed); }
 .btn.solid:hover{ background: var(--wax-light); border-color: var(--wax-light); }
 
 /* ===== Header / Nav ===== */
@@ -89,7 +94,9 @@ section{ padding: clamp(3.5rem, 8vw, 7rem) 0; position:relative; }
   position: fixed; top:0; left:0; right:0; z-index: 100;
   padding: 1.1rem 0;
   transition: background .35s ease, padding .35s ease, border-color .35s ease;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid var(--line);
+  background: rgba(14,13,11,.92);
+  backdrop-filter: blur(6px);
 }
 .site-header.solid{
   background: rgba(14,13,11,.92);
@@ -246,6 +253,14 @@ footer h4{ font-family: var(--display); font-size:.78rem; letter-spacing:.14em; 
 footer ul{ list-style:none; margin:0; padding:0; display:grid; gap:.6rem; }
 footer a{ text-decoration:none; color: var(--text-soft); font-size:.95rem; }
 footer a:hover{ color: var(--gold-light); }
+.footer-partners{
+  display:flex; align-items:center; justify-content:center; gap:1rem;
+  flex-wrap:wrap; margin-top: 2rem;
+}
+.footer-partners span{ font-size:.82rem; color: var(--text-soft); }
+.footer-partners img{ height:48px; width:auto; opacity:.9; transition: opacity .2s ease; filter: brightness(1.15); }
+.footer-partners a:hover img{ opacity:1; }
+
 .footer-bottom{
   display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;
   font-size:.8rem; color: var(--text-soft); padding-top: 2rem; border-top:1px solid var(--line);
@@ -371,12 +386,18 @@ footer a:hover{ color: var(--gold-light); }
 }
 .myth-chip .x{ color: var(--wax-light); font-weight:bold; }
 
+.value-chip{
+  display:inline-flex; align-items:center; gap:.6em; border:1px solid var(--gold);
+  padding: .9em 1.5em; font-family: var(--display); font-size:.95rem; letter-spacing:.03em;
+  color: var(--gold-light); background: var(--ink-2);
+}
+
 /* ===== Badges de estado (disciplinas) ===== */
 .status{
   display:inline-block; font-family: var(--display); font-size:.66rem; letter-spacing:.12em;
   text-transform:uppercase; padding:.3em .8em; margin-bottom: .8rem;
 }
-.status.activa{ color: var(--ink); background: var(--gold-light); }
+.status.activa{ color: var(--ink-fixed); background: var(--gold-light); }
 .status.formacion{ color: var(--gold-light); background:transparent; border:1px solid var(--gold); }
 
 /* ===== Mapa ===== */
@@ -388,7 +409,66 @@ footer a:hover{ color: var(--gold-light); }
 }
 
 
-/* ===== Responsive ===== */
+/* ===== Experimento: tratado antiguo — páginas con vuelta de hoja ===== */
+body{ perspective: 1800px; }
+
+.page-sheet{
+  /* Tema de página: papel envejecido (invierte la paleta solo dentro de la hoja;
+     header y footer quedan con el tema oscuro original, como la tapa del libro) */
+  --ink:        #e9ddc0;
+  --ink-2:      #dfd0a8;
+  --ink-3:      #d3c091;
+  --parchment:  #2b2015;
+  --gold-light: #8a5c17;
+  --text-soft:  rgba(43,32,21,.72);
+  --line:       rgba(120,80,30,.3);
+
+  background-color: var(--ink);
+  background-image:
+    radial-gradient(ellipse 340px 260px at 8% 12%, rgba(120,90,40,.16), transparent 60%),
+    radial-gradient(ellipse 260px 300px at 92% 30%, rgba(120,90,40,.14), transparent 60%),
+    radial-gradient(ellipse 300px 240px at 20% 78%, rgba(90,60,20,.12), transparent 60%),
+    radial-gradient(ellipse 380px 300px at 85% 88%, rgba(120,90,40,.13), transparent 60%),
+    radial-gradient(ellipse 900px 500px at 50% 0%, rgba(255,250,235,.35), transparent 60%),
+    url("../img/paper-noise.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+  background-size: auto, auto, auto, auto, auto, 256px 256px;
+  color: var(--parchment);
+  position: relative;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  transition: transform .5s cubic-bezier(.6,0,.4,1), opacity .42s ease;
+  box-shadow: inset 26px 0 36px -30px rgba(60,42,20,.35), inset -10px 0 24px -20px rgba(60,42,20,.25);
+}
+
+.page-sheet.leaving{
+  transform: rotateY(-12deg) translateX(-2%) scale(.98);
+  opacity: 0;
+  box-shadow: -40px 0 80px -20px rgba(0,0,0,.6);
+}
+.page-sheet.entering{
+  transform: rotateY(10deg) translateX(2%) scale(.98);
+  opacity: 0;
+}
+.page-sheet.settled{
+  transform: none;
+  opacity: 1;
+}
+
+.folio{
+  max-width: var(--maxw); margin: 0 auto; padding: 2.5rem 6vw 3.5rem;
+  text-align:center; font-family: var(--display); font-style:italic; font-size:.78rem;
+  letter-spacing:.18em; text-transform:uppercase; color: var(--gold-light); opacity:.75;
+  border-top: 1px solid var(--line);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .page-sheet, .page-sheet.leaving, .page-sheet.entering, .page-sheet.settled{
+    transition:none; transform:none; opacity:1;
+  }
+}
+
 @media (max-width: 900px){
   .grid.cols-3{ grid-template-columns: 1fr 1fr; }
   .footer-grid{ grid-template-columns: 1fr 1fr; }

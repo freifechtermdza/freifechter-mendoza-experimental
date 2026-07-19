@@ -40,6 +40,8 @@
     </nav>
   </div>
 </header>
+
+<main id="page" class="page-sheet">
 <section class="page-hero">
   <div class="container">
     <span class="eyebrow">El corpus de Meyer</span>
@@ -51,7 +53,7 @@
 <section>
   <div class="container split">
     <div class="reveal" style="text-align:center;order:2;">
-      <img src="assets/img/espada-larga.png" alt="Espada larga" style="max-width:180px;margin:0 auto;">
+      <img src="assets/img/espada-larga.png" alt="Espada larga" style="max-height:300px;width:auto;margin:0 auto;display:block;">
     </div>
     <div class="reveal" style="order:1;">
       <span class="status activa">Disciplina activa</span>
@@ -69,11 +71,11 @@
       <span class="status formacion">En incorporación</span>
       <span class="eyebrow">02</span>
       <h2>Dussack</h2>
-      <p style="color:var(--text-soft);">El dussack es el arma de entrenamiento tradicional para la esgrima de sable de un filo. En Meyer aparece como el siguiente paso natural tras la espada larga, trasladando sus principios a un arma de una mano.</p>
+      <p style="color:var(--text-soft);">Arma de entrenamiento tradicional para la esgrima de sable de un filo. En Meyer aparece como el siguiente paso natural tras la espada larga, trasladando sus principios a un arma de una mano.</p>
       <p style="color:var(--text-soft);">Estamos incorporando el equipo necesario para sumar esta disciplina de forma regular.</p>
     </div>
     <div class="reveal" style="text-align:center;">
-      <img src="assets/img/dussack.png" alt="Dussack" style="max-width:260px;margin:0 auto;">
+      <img src="assets/img/dussack.png" alt="Dussack" style="max-height:300px;width:auto;margin:0 auto;display:block;">
     </div>
   </div>
 </section>
@@ -81,13 +83,13 @@
 <section>
   <div class="container split">
     <div class="reveal" style="text-align:center;order:2;">
-      <img src="assets/img/ringen.png" alt="Ringen" style="max-width:260px;margin:0 auto;">
+      <img src="assets/img/ringen.png" alt="Ringen" style="max-height:300px;width:auto;margin:0 auto;display:block;">
     </div>
     <div class="reveal" style="order:1;">
       <span class="status formacion">En incorporación</span>
       <span class="eyebrow">03</span>
       <h2>Ringen</h2>
-      <p style="color:var(--text-soft);">La lucha (Ringen) es la base de todo el sistema marcial renacentista: derribos, palancas, control postural y llaves que se aplican tanto desarmado como en el cierre de distancia con espada.</p>
+      <p style="color:var(--text-soft);">Es la base de todo el sistema marcial renacentista: derribos, palancas, control postural y llaves que se aplican tanto desarmado como en el cierre de distancia con espada.</p>
       <p style="color:var(--text-soft);">La sumaremos como práctica regular en los próximos pasos de crecimiento del club.</p>
     </div>
   </div>
@@ -99,11 +101,11 @@
       <span class="status formacion">En incorporación</span>
       <span class="eyebrow">04</span>
       <h2>Rappier</h2>
-      <p style="color:var(--text-soft);">La ropera (Rappier) es la sección que Meyer dedica a la esgrima civil de estocada: distancia larga, líneas rectas y control del centro con un arma más liviana que la espada larga.</p>
+      <p style="color:var(--text-soft);">Es la sección que Meyer dedica a la esgrima civil de estocada: distancia larga, líneas rectas y control del centro con un arma más liviana que la espada larga.</p>
       <p style="color:var(--text-soft);">Próximamente, a medida que sumamos equipo de práctica.</p>
     </div>
     <div class="reveal" style="text-align:center;">
-      <img src="assets/img/rapier.png" alt="Rappier" style="max-width:220px;margin:0 auto;">
+      <img src="assets/img/rapier.png" alt="Rappier" style="max-height:300px;width:auto;margin:0 auto;display:block;">
     </div>
   </div>
 </section>
@@ -111,7 +113,7 @@
 <section>
   <div class="container split">
     <div class="reveal" style="text-align:center;order:2;">
-      <img src="assets/img/daga.png" alt="Daga" style="max-width:130px;margin:0 auto;">
+      <img src="assets/img/daga.png" alt="Daga" style="max-height:300px;width:auto;margin:0 auto;display:block;">
     </div>
     <div class="reveal" style="order:1;">
       <span class="status formacion">En incorporación</span>
@@ -133,7 +135,7 @@
       <p style="color:var(--text-soft);">Todavía en proceso de formación e incorporación de equipo.</p>
     </div>
     <div class="reveal" style="text-align:center;">
-      <img src="assets/img/baston-pica.png" alt="Bastón / Pica" style="max-width:110px;margin:0 auto;">
+      <img src="assets/img/baston-pica.png" alt="Bastón / Pica" style="max-height:300px;width:auto;margin:0 auto;display:block;">
     </div>
   </div>
 </section>
@@ -145,6 +147,9 @@
     <a href="horarios.html" class="btn solid">Ver horarios de clase</a>
   </div>
 </section>
+<div class="folio">Folio III — Disciplinas</div>
+</main>
+
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -172,6 +177,12 @@
         </ul>
       </div>
     </div>
+    <div class="footer-partners">
+      <span>Orgullosos miembros de la</span>
+      <a href="https://www.cadh-hema.com.ar" target="_blank" rel="noopener">
+        <img src="assets/img/logo-cadh.svg" alt="Comunidad Argentina de HEMA">
+      </a>
+    </div>
     <div class="footer-bottom">
       <span>© <span id="year"></span> Freifechter Mendoza. Peritia in gladio, gloria in vita.</span>
       <span>Mendoza, Argentina</span>
@@ -181,5 +192,6 @@
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/page-transitions.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 // Experimento: navegación tipo "tratado antiguo" — cada página se comporta
 // como una hoja que se da vuelta al pasar a la siguiente sección.
 (function () {
-  const PAGES = ['index.html','nosotros.html','disciplinas.html','horarios.html','galeria.html','eventos.html','contacto.html'];
+  const PAGES = ['index.html','nosotros.html','disciplinas.html','horarios.html','galeria.html','blog.html','articulo-fechtbuch.html','contacto.html'];
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const supportsFetch = 'fetch' in window;
 
@@ -67,6 +67,7 @@
       document.title = newTitle;
       setActiveNav(slug);
       initRevealObserver(page);
+    if (window.initHeroCarousel) window.initHeroCarousel(page);
       window.scrollTo(0, 0);
       if (push) history.pushState({ slug }, '', url);
       return;
@@ -88,6 +89,7 @@
     page.classList.add('settled');
 
     initRevealObserver(page);
+    if (window.initHeroCarousel) window.initHeroCarousel(page);
     if (push) history.pushState({ slug }, '', url);
 
     setTimeout(() => page.classList.remove('settled'), 520);
