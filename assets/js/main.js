@@ -1,35 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.site-header');
+  const nav = document.querySelector('.nav');
   const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.main-nav');
+  const links = document.querySelector('.nav-links');
 
   const onScroll = () => {
-    if (window.scrollY > 40) header.classList.add('solid');
-    else header.classList.remove('solid');
+    if (window.scrollY > 40) nav.classList.add('solid');
+    else nav.classList.remove('solid');
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    nav.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => nav.classList.remove('open'))
-    );
+  if (toggle && links) {
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
   }
 
   const revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && revealEls.length) {
+  if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
     revealEls.forEach(el => io.observe(el));
   } else {
     revealEls.forEach(el => el.classList.add('in'));
