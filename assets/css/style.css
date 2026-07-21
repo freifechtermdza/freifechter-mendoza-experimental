@@ -76,8 +76,8 @@ p{ margin:0 0 1em; color:var(--gray); }
 
 /* ===== Hero ===== */
 .hero{
-  position:relative; min-height:100vh; display:flex; align-items:flex-end;
-  overflow:hidden; padding-bottom:clamp(3rem,8vw,6rem);
+  position:relative; min-height:100vh; display:flex; align-items:center;
+  overflow:hidden; padding:8rem 0 4rem;
 }
 .hero-bg{
   position:absolute; inset:0; background-size:cover; background-position:center 30%;
@@ -85,16 +85,27 @@ p{ margin:0 0 1em; color:var(--gray); }
 .hero-bg::after{ content:none; }
 .hero::before{
   content:""; position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(10,10,10,.35) 0%, rgba(10,10,10,.35) 40%, rgba(10,10,10,.95) 100%);
+  background:linear-gradient(180deg, rgba(10,9,6,.28) 0%, rgba(10,9,6,.1) 45%, rgba(10,9,6,.4) 100%);
 }
-.hero-content{ position:relative; z-index:2; max-width:900px; }
+.hero-content{
+  position:relative; z-index:2; max-width:1000px;
+  display:flex; align-items:center; gap:clamp(1.5rem,4vw,3rem);
+  background:rgba(236,226,207,.94); border:1px solid var(--gold);
+  padding:clamp(1.8rem,4vw,3.2rem); border-radius:2px;
+  box-shadow:0 30px 70px -20px rgba(0,0,0,.55);
+}
+.hero-text{ flex:1 1 auto; }
 .hero-logo{
-  width:clamp(96px,11vw,150px); height:auto; margin-bottom:1.4rem;
-  filter:drop-shadow(0 8px 26px rgba(0,0,0,.6));
+  width:clamp(90px,9vw,130px); height:auto; flex-shrink:0;
+  filter:drop-shadow(0 4px 14px rgba(0,0,0,.25));
 }
-.hero .eyebrow{ color:var(--gold-soft); }
-.hero .lead{ font-size:1.25rem; margin-bottom:2.2rem; color:#d8d8d8; }
+.hero .eyebrow{ color:var(--wax); }
+.hero h1{ color:#1a1509; }
+.hero .lead{ font-size:1.2rem; margin-bottom:2rem; color:#3a3020; }
 .hero-actions{ display:flex; gap:1rem; flex-wrap:wrap; }
+@media (max-width:780px){
+  .hero-content{ flex-direction:column-reverse; text-align:center; }
+}
 
 /* ===== Qué es HEMA (foto + texto) ===== */
 .split{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,6vw,5rem); align-items:center; }
