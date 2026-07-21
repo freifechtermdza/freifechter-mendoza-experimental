@@ -62,9 +62,10 @@ p{ margin:0 0 1em; color:var(--gray); }
 .nav{
   position:fixed; top:0; left:0; right:0; z-index:100;
   padding:1.3rem 0; transition:background .3s ease, padding .3s ease, border-color .3s ease;
-  border-bottom:1px solid transparent;
+  border-bottom:1px solid var(--line);
+  background:rgba(10,9,6,.78); backdrop-filter:blur(8px);
 }
-.nav.solid{ background:rgba(10,10,10,.85); backdrop-filter:blur(10px); border-color:var(--line); padding:.9rem 0; }
+.nav.solid{ background:rgba(10,9,6,.92); backdrop-filter:blur(10px); border-color:var(--line); padding:.9rem 0; }
 .nav .container{ display:flex; align-items:center; justify-content:space-between; }
 .brand{ display:flex; align-items:center; gap:.6rem; text-decoration:none; }
 .brand img{ width:34px; height:34px; object-fit:contain; }
